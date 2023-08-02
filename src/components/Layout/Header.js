@@ -7,10 +7,8 @@ const Header = (props) => {
     return (
         <Fragment>
             <header className={classes.header}>
-
                 <h2> Meals </h2>
                 <HeaderCartButton />
-
             </header>
             <div className={classes['main-image']}>
                 <img src={mealsImage} alt="A table with verities food" />
