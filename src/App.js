@@ -1,7 +1,8 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import Header from "./components/Layout/Header";
 import Meals from "./components/Meals/Meals";
 import Cart from "./components/Cart/Cart";
+import CartProvier from "./store/CartProvider";
 
 function App(props) {
   const [CartShow, setCartShow] = useState(false);
@@ -15,15 +16,15 @@ function App(props) {
   }
 
   return (
-    <Fragment>
+    <CartProvier>
       {/* onClose is passed to the Cart component since that component is handling cancel button */}
-     {CartShow && <Cart onClose={HideCartHandler}/>}
-     {/* onShowCart passed as a prop to the header component */}
-      <Header onShowCart={ShowCartHanlder}/>
+      {CartShow && <Cart onClose={HideCartHandler} />}
+      {/* onShowCart passed as a prop to the header component */}
+      <Header onShowCart={ShowCartHanlder} />
       <main>
         <Meals />
       </main>
-    </Fragment>
+    </CartProvier>
   );
 }
 
