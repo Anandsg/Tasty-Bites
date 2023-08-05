@@ -11,14 +11,16 @@ const Cart = (props) => {
         price: '132.23',
     }].map((item) => <li key={item.id}>{item.name}</li>)}</ul>;
     return (
-        <Modal>
+        // also we need to call onclose here as the modal form is being used 
+        <Modal onClose={props.onClose}>
             {cartItems}
             <div className={classes.total}>
                 <span>Total Amount</span>
                 <span>745</span>
             </div>
             <div className={classes.actions}>
-                <button className={classes['button-alt']}>Close</button>
+                {/* in the below line calling onClose from app comp using props */}
+                <button className={classes['button-alt']} onClick={props.onClose}>Close</button>
                 <button className={classes.button}>Order</button>
             </div>
         </Modal>

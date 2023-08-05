@@ -1,15 +1,16 @@
 import React, { Fragment } from "react";
 import classes from './Modal.module.css'
-import  ReactDOM  from "react-dom"
+import ReactDOM from "react-dom"
 
 const Backdrop = (props) => {
-   return  <div className={classes.backdrop}></div>;
+    // When user click on backgroud screen the cart form shoule get close thats why
+    // calling onClose from app comp using props
+    return <div className={classes.backdrop} onClick={props.onClose}></div>;
 }
 
 const ModalOverlay = (props) => {
-   return <div className={classes.modal}>
+    return <div className={classes.modal}>
         <div className={classes.content}>{props.children}</div>
-
     </div>
 }
 
@@ -18,7 +19,8 @@ const Modal = (props) => {
 
     return (
         <Fragment>
-            {ReactDOM.createPortal(<Backdrop />, portalElement)}
+            {/* passing onclose props from app component  */}
+            {ReactDOM.createPortal(<Backdrop onClose={props.onClose} />, portalElement)}
             {ReactDOM.createPortal(
                 <ModalOverlay>{props.children}</ModalOverlay>,
                 portalElement)}

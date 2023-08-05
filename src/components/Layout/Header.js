@@ -8,7 +8,8 @@ const Header = (props) => {
         <Fragment>
             <header className={classes.header}>
                 <h2> Meals </h2>
-                <HeaderCartButton />
+                {/* onClick has passed to the header cart button component */}
+                <HeaderCartButton onClick={props.onShowCart}/>
             </header>
             <div className={classes['main-image']}>
                 <img src={mealsImage} alt="A table with verities food" />
