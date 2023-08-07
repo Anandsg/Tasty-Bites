@@ -18,3 +18,14 @@
     background-color: #641e03;
     border-color: #641e03;
   }
+  
+  .form-control {
+    margin-bottom: 1rem;
+    text-align: right;
+}
+
+.form-control label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
