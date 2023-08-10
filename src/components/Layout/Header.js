@@ -7,7 +7,7 @@ const Header = (props) => {
     return (
         <Fragment>
             <header className={classes.header}>
-                <h2> Meals </h2>
+                <h2> Tasty Bites </h2>
                 {/* onClick has passed to the header cart button component */}
                 <HeaderCartButton onClick={props.onShowCart}/>
             </header>
