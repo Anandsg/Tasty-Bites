@@ -5,7 +5,7 @@
     margin: auto;
     margin-top: -10rem;
     position: relative;
-    background-color: #7d6b6b;
+    background-color: #3d3b3b; 
     color: white;
     border-radius: 14px;
     padding: 1rem;
@@ -16,3 +16,4 @@
     font-size: 2rem;
     margin-top: 0;
   }
+  
